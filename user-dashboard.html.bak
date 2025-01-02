@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your shared CSS file -->
+</head>
+<body>
+  <header>
+    <h1>Welcome to the User Dashboard</h1>
+    <p>Here you can view and manage your profile and settings.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="profile.html">View Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="history.html">View History</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Your Tasks</h2>
+    <p>Here you can view your activity history and manage your personal information.</p>
+    <!-- Add more content specific to the user dashboard -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Organization</p>
+  </footer>
+
+  <script>
+    document.getElementById('logout').addEventListener('click', function() {
+      // Clear session or perform logout action
+      alert('Logging out...');
+      window.location.href = '/login.html'; // Redirect to login page
+    });
+  </script>
+</body>
+</html>
+

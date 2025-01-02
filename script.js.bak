@@ -1,0 +1,38 @@
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Send login request to backend
+  fetch('http://52.91.58.110:3001/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message === 'Login successful!') {
+      alert(`Welcome ${data.user.username}, Role: ${data.user.role}`);
+      
+      // Check user role and redirect to appropriate dashboard
+      if (data.user.role === 'admin') {
+        // Redirect to admin dashboard
+      //  window.location.href = '/var/www/html/login_page/admin-dashboard.html';
+      window.location.href = 'http://52.91.58.110:3001/admin-dashboard.html';
+      } else {
+        // Redirect to user dashboard
+      //  window.location.href = '/var/www/html/login_page/user-dashboard.html';
+      window.location.href = 'http://52.91.58.110:3001/user-dashboard.html';
+      }
+    } else {
+      alert(data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Something went wrong! Please try again.');
+  });
+});
+

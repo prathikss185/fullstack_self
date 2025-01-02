@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your shared CSS file -->
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Admin Dashboard</h1>
+    <p>Manage users, view reports, and perform administrative tasks.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="user-management.html">User Management</a></li>
+      <li><a href="reports.html">View Reports</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Admin Tasks</h2>
+    <p>Here you can manage system-wide settings, view logs, and configure various aspects of the platform.</p>
+    <!-- Add more content specific to the admin dashboard -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Organization</p>
+  </footer>
+
+  <script>
+    document.getElementById('logout').addEventListener('click', function() {
+      // Clear session or perform logout action
+      alert('Logging out...');
+      window.location.href = '/login.html'; // Redirect to login page
+    });
+  </script>
+</body>
+</html>
+
